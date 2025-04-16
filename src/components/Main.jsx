@@ -1,4 +1,3 @@
-import Home from "../pages/Home";
 
 export default function Main() {
     return (
@@ -16,8 +15,6 @@ export default function Main() {
                     </button>
                 </div>
             </div>
-
-            <Home />
         </>
     )
 }
