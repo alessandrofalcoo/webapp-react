@@ -16,11 +16,11 @@ export default function Home() {
     return (
         <>
             {movies.map(movie => (
-                <div class="card" key={movie.id}>
-                    <img class="card-img-top" src="" alt="Title" />
-                    <div class="card-body">
-                        <h4 class="card-title">{movie.title}</h4>
-                        <p class="card-text">{movie.abstract}</p>
+                <div className="card" key={movie.id}>
+                    <img className="card-img-top" src={movie.image} alt="Title" />
+                    <div className="card-body">
+                        <h4 className="card-title">{movie.title}</h4>
+                        <p className="card-text">{movie.abstract}</p>
                     </div>
                 </div>
 
