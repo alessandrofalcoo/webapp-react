@@ -16,12 +16,12 @@ export default function Home() {
 
     return (
         <>
-            <div className="container d-flex gap-3 my-4 flex-column">
+            <div className="container d-flex flex-wrap justify-content-around gap-4 my-4 ">
                 {movies.map(movie => (
                     <div className="card" key={movie.id}>
-                        <img className="card-img-top" src={`http://localhost:3000/public/img/${movie.image}`} alt="Title" />
+                        <img className="card-img-top" src={`http://localhost:3000/img/${movie.image}`} alt="Title" />
                         <div className="card-body">
-                            <h4 className="card-title">{movie.title}</h4>
+                            <h4 className="card-title" onClick={Movie}>{movie.title}</h4>
                             <p className="card-text">{movie.abstract}</p>
                         </div>
                     </div>

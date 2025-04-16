@@ -1,2 +1,47 @@
 @import 'bootstrap';
-/* @import 'bootstrap-icons'; */
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    width: 300px;
+    /* Larghezza fissa */
+    height: 400px;
+    /* Altezza fissa */
+    border-radius: 10px;
+    /* Angoli arrotondati */
+}
+
+.card-img-top {
+    width: 100%;
+    /* L'immagine occupa tutta la larghezza della card */
+    height: 100%;
+    /* L'immagine occupa il 60% dell'altezza */
+    object-fit: cover;
+    /* Adatta l'immagine senza distorsioni */
+}
+
+.card-body {
+    position: absolute;
+    top: 60%;
+    /* Inizia sotto l'immagine */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* Spaziatura interna */
+    text-align: center;
+    /* Centra il testo */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-body {
+    opacity: 1;
+}
