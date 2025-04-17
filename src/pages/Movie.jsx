@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import Main from "../components/Main"
 import Header from "../components/Header"
+import Reviews from "../components/Reviews"
 
 
 export default function Movie() {
@@ -25,14 +26,16 @@ export default function Movie() {
             <Header />
             <Main />
             <div className="container">
-                <div className="card">
-                    <img className="card-img-top" src={`http://localhost:3000/img/${movie.image}`} alt="Title" />
-                    <div className="card-body">
-                        <h4 className="card-title">{movie.title}</h4>
-                        <p className="card-text">{movie.abstract}</p>
+                <div className="card-container d-flex justify-content-center">
+                    <div className="card">
+                        <img className="card-img-top" src={`http://localhost:3000/img/${movie.image}`} alt="Title" />
+                        <div className="card-body">
+                            <h4 className="card-title">{movie.title}</h4>
+                            <p className="card-text">{movie.abstract}</p>
+                        </div>
                     </div>
                 </div>
-
+                <Reviews />
             </div>
         </>
     )
