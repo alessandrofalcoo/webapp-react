@@ -23,7 +23,7 @@ export default function Reviews() {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-
+            setFormData(formData)
         })
 
     function handleFormSubmit(e) {
