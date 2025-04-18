@@ -35,7 +35,7 @@ export default function Movie() {
                         </div>
                     </div>
                 </div>
-                <Reviews />
+                <Reviews movieId={id} />
             </div>
         </>
     )
