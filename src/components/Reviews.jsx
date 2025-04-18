@@ -9,6 +9,8 @@ export default function Reviews({ movieId }) {
     }
 
     const [formData, setFormData] = useState(initialData)
+    const [reviews, setReviews] = useState([])
+    const [successMessage, setSuccessMessage] = useState('')
 
     const api_url = 'http://localhost:3000/movies'
 
@@ -36,7 +38,9 @@ export default function Reviews({ movieId }) {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-
+                const newReview = { ...formData };
+                setReviews([...reviews, newReview])
+                setSuccessMessage('Recensione creata con successo!');
                 setFormData({ ...initialData, name: '', vote: '', description: '' })
             })
             .catch(err => console.error("Error saving review", err))
@@ -57,7 +61,6 @@ export default function Reviews({ movieId }) {
                             value={formData.name}
                             onChange={handleInputChange}
                         />
-                        <small id="helpId" className="form-text text-muted">Help text</small>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="" className="form-label">Voto</label>
@@ -73,7 +76,6 @@ export default function Reviews({ movieId }) {
                             min="1"
                             max="5"
                         />
-                        <small id="helpId" className="form-text text-muted">Help text</small>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="" className="form-label">Descrizione</label>
@@ -87,11 +89,27 @@ export default function Reviews({ movieId }) {
                             value={formData.description}
                             onChange={handleInputChange}
                         />
-                        <small id="helpId" className="form-text text-muted">Help text</small>
                     </div>
 
                     <button type="submit" className="btn btn-primary">Invia</button>
                 </form>
+                {successMessage && (
+                    <div className="alert alert-success mt-3" role="alert">
+                        {successMessage}
+                    </div>
+
+                )}
+                {reviews.map((review, index) => (
+                    <div key={index} className="card bg-success text-white mb-3">
+
+                        <div className="card-body">
+                            <h4 className="card-title">{review.name}</h4>
+                            <p className="card-text">Voto: {review.vote}</p>
+                            <p className="text">{review.description}</p>
+                        </div>
+                    </div>
+
+                ))}
 
             </div>
         </>
