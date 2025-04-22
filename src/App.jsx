@@ -15,7 +15,7 @@ function App() {
         <BrowserRouter >
           <Routes >
             <Route path='/' Component={Home} />
-            <Route path="/:id/movie" Component={Movie} />
+            <Route path="/movies/:id" Component={Movie} />
 
 
           </Routes>

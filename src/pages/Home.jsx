@@ -17,7 +17,7 @@ export default function Home() {
 
                 {movies.length > 0 ? (
                     movies.map(movie => (
-                        <Link to={`/${movie.id}/movie`} key={movie.id}>
+                        <Link to={`/movies/${movie.id}`} key={movie.id}>
                             <div className="card" >
                                 <img className="card-img-top" src={`http://localhost:3000/img/${movie.image}`} alt="Title" />
                                 <div className="card-body">
