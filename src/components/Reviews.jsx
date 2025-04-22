@@ -100,13 +100,10 @@ export default function Reviews({ movieId }) {
 
                 )}
                 {reviews.map((review, index) => (
-                    <div key={index} className="card bg-success text-white mb-3">
-
-                        <div className="card-body">
-                            <h4 className="card-title">{review.name}</h4>
-                            <p className="card-text">Voto: {review.vote}</p>
-                            <p className="text">{review.description}</p>
-                        </div>
+                    <div key={index} className=" review mb-3">
+                        <h4 className="card-title">{review.name}</h4>
+                        <p className="card-text">Voto: {review.vote}</p>
+                        <p className="text">{review.description}</p>
                     </div>
 
                 ))}

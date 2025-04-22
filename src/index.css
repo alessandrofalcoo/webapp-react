@@ -45,3 +45,55 @@
 .card:hover .card-body {
     opacity: 1;
 }
+
+.review {
+    background-color: #f8f9fa;
+    /* Sfondo chiaro */
+    border: 1px solid #dee2e6;
+    /* Bordo grigio chiaro */
+    border-radius: 10px;
+    /* Angoli arrotondati */
+    padding: 15px;
+    /* Spaziatura interna */
+    margin-bottom: 15px;
+    /* Spaziatura tra le recensioni */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ombra leggera */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Spaziatura tra gli elementi */
+}
+
+.review .card-title {
+    font-size: 1.25rem;
+    /* Dimensione del titolo */
+    font-weight: bold;
+    /* Testo in grassetto */
+    color: #343a40;
+    /* Colore del testo */
+    margin-bottom: 5px;
+}
+
+.review .card-text {
+    font-size: 1rem;
+    /* Dimensione del testo */
+    color: #495057;
+    /* Colore del testo */
+}
+
+.review .text {
+    font-size: 0.9rem;
+    /* Testo più piccolo per la descrizione */
+    color: #6c757d;
+    /* Colore grigio per il testo secondario */
+}
+
+.review .vote {
+    font-size: 1.1rem;
+    /* Dimensione del voto */
+    font-weight: bold;
+    /* Voto in grassetto */
+    color: #28a745;
+    /* Colore verde per il voto */
+}

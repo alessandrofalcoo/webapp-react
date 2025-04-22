@@ -1,11 +1,15 @@
 import { useMoviesContext } from "../context/GlobalContext";
 import { Link } from "react-router-dom";
 import Main from "../components/Main";
+import Loader from "../components/Loader";
 
 export default function Home() {
-    const { movies } = useMoviesContext()
+    const { movies, loading } = useMoviesContext()
     console.log(movies);
 
+    if (loading) {
+        return <Loader />; // Mostra il loader durante i caricamenti
+    }
     return (
         <>
             <Main />
